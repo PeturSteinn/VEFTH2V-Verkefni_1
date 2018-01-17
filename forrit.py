@@ -1,3 +1,4 @@
+import os
 from bottle import route, run
 
 @route('/')
@@ -17,4 +18,4 @@ def picture():
     return '<img src=\'https://i.pinimg.com/originals/d8/d5/fe/d8d5fe9cd4e61f864032aac6c737eae5.jpg\' width=\'300px\'>' \
            '</img><h1><a href=\'/\'>Til baka</a></h1>'
 
-run()
+run(host="0.0.0.0", port=os.environ.get('PORT'))
